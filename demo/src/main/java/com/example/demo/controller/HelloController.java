@@ -13,8 +13,11 @@ public class HelloController {
     @Value("${greeting.message}")
     private String message;
 
+    @Value("${message}")
+    private String profilMessage;
+
     @GetMapping("/")
-    public String sayHello() {
-        return "Hello World " + this.message;
+    public String sayHello(String profil) {
+        return "Hello World " + this.message + "<br/>" + this.profilMessage;
     }
 }
