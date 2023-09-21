@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1 th:text="${message}">Ma vue</h1>
+    <h1 th:text="${welcomeMessage}">Ma vue</h1>
+
+    <div th:each="msg : ${messageList}">
+        <p><b th:text="${msg.author}"></b></p>
+        <p th:text="${msg.content}"></p>
+    </div>
 </body>
 </html>
