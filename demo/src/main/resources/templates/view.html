@@ -9,12 +9,13 @@
 
     <form action="#" th:action="@{/view}" th:object="${newMessage}" method="post">
         <input type="text" name="author" th:field="*{author}" placeholder="Votre nom">
+        <input type="number" name="age" th:field="*{age}" placeholder="Votre âge">
         <input type="text" name="content" th:field="*{content}" placeholder="Message">
         <input type="submit" value="Envoyer">
     </form>
 
     <div th:each="msg : ${messageList}">
-        <p><b th:text="${msg.author}"></b></p>
+        <p><b th:text="${msg.author}"></b> (<span th:text="${msg.age}"></span>)</p>
         <p th:text="${msg.content}"></p>
     </div>
 </body>

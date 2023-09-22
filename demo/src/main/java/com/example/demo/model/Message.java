@@ -1,12 +1,18 @@
 package com.example.demo.model;
 
+import jakarta.validation.constraints.Min;
+
 public class Message {
     private String author;
 
+    @Min(value = 13, message = "Must be 13 years old or older to post")
+    private Integer age;
+
     private String content;
 
-    public Message(String author, String content) {
+    public Message(String author, Integer age,String content) {
         this.author = author;
+        this.age = age;
         this.content = content;
     }
 
@@ -26,5 +32,13 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
